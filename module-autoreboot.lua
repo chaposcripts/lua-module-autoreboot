@@ -69,7 +69,6 @@ local function loadUsedModules()
     for module in pairs(package.loaded) do
         local path = findModulePath(module);
         if (path) then
-            print('loaded', path);
             local editedAt = getFileEditedAt(path);
             MODULE_AUTOREBOOT_MODULES[module] = { path = path, editedAtLow = editedAt.low, editedAtHigh = editedAt.high };
         end
